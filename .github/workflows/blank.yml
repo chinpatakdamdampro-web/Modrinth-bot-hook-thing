@@ -23,12 +23,12 @@ jobs:
           cache: gradle
 
       - name: Make Gradle Wrapper Executable
-        run: chmod +x gradlew
+        run: echo "67"
 
       - name: Run Notifier Application
         env:
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
-        run: ./gradlew run
+        run: gradle run
 
       - name: Commit and Push state.json
         run: |
